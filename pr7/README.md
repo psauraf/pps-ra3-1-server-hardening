@@ -11,6 +11,8 @@ Se busca:
 - Aplicar cabeceras de seguridad estándar.
 - Prevenir ataques comunes como clickjacking o enumeración de recursos.
 
+---
+
 ## Implementación
 Se ha desplegado un servidor **Apache 2** sobre una imagen debian:12-slim, configurado dentro de un contenedor Docker.
 
@@ -94,9 +96,13 @@ Incluyen:
 - Acceso denegado a directorios sin index
 - Contenedor Docker en ejecución
 
+---
+
 ## Conclusión
 La aplicación de estas medidas permite endurecer significativamente la configuración por defecto de Apache, reduciendo la exposición de información sensible y mitigando vectores de ataque comunes.
 Estas prácticas son complementarias a otras técnicas de seguridad como el uso de HTTPS, WAFs o limitación de peticiones.
+
+---
 
 ## Referencias
 - Apache Web Server Hardening and Security Guide

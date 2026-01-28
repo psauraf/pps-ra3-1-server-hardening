@@ -35,7 +35,7 @@ En sistemas basados en Debian, Apache incluye por defecto un archivo `security.c
 ## Build
 Desde el directorio `pr1`:
 
-docker build -t pps/pr1 .
+    docker build -t pps/pr1 .
 
 ---
 
@@ -43,7 +43,7 @@ docker build -t pps/pr1 .
 
 Ejecución del contenedor exponiendo los puertos HTTP y HTTPS:
 
-  docker run --rm -d -p 8080:80 -p 8443:443 --name pps-pr1 pps/pr1
+    docker run --rm -d -p 8080:80 -p 8443:443 --name pps-pr1 pps/pr1
 
 ---
 
@@ -51,19 +51,19 @@ Ejecución del contenedor exponiendo los puertos HTTP y HTTPS:
 1. Comprobación de HTTPS y cabeceras de seguridad
 Se verifica que el servidor responde correctamente por HTTPS y que las cabeceras de seguridad están presentes:
 
-  curl -k -I https://localhost:8443
+    curl -k -I https://localhost:8443
 
 Se comprueba la presencia de:
-· Strict-Transport-Security
-· Content-Security-Policy
-· Cabecera Server con información de versión y sistema operativo
+- Strict-Transport-Security
+- Content-Security-Policy
+- Cabecera Server con información de versión y sistema operativo
 
 ![Cabecera Server con información de versión y sistema operativo](img/headers_https.png)
 
 2. Comprobación de autoindex deshabilitado
 Se accede a un directorio sin fichero index y se verifica que no se muestra el listado de archivos:
 
-  curl -i http://localhost:8080/testdir/
+    curl -i http://localhost:8080/testdir/
 
 El servidor devuelve un error 404 Not Found, confirmando que el módulo autoindex está deshabilitado correctamente.
 
@@ -71,25 +71,29 @@ El servidor devuelve un error 404 Not Found, confirmando que el módulo autoinde
 
 3. Comprobación de ocultación de información del servidor
 Se verifica que:
-· No se expone la versión exacta de Apache en la cabecera Server
-· Las páginas de error no muestran información sensible sobre el servidor ni el sistema operativo
+- No se expone la versión exacta de Apache en la cabecera Server
+- Las páginas de error no muestran información sensible sobre el servidor ni el sistema operativo
 
 ![Ejemplo de página de error sin información de versión](img/error_page_no_version.png)
+
+---
 
 ## Evidencias
 Las capturas de pantalla y salidas de los comandos de validación se encuentran en la carpeta:
 
-  pr1/img/
+    pr1/img/
 
 Entre ellas:
-· Cabeceras HTTPS con HSTS y CSP
-· Acceso a directorio sin listado de archivos
-· Página de error sin información de versión
-· Contenedor Docker en ejecución
+- Cabeceras HTTPS con HSTS y CSP
+- Acceso a directorio sin listado de archivos
+- Página de error sin información de versión
+- Contenedor Docker en ejecución
 Estado del contenedor en ejecución:
 
+---
+
 ## Referencias
-· Hardening del servidor web Apache – Puesta en Producción Segura
+- Hardening del servidor web Apache – Puesta en Producción Segura
 https://psegarrac.github.io/Ciberseguridad-PePS/tema3/seguridad/web/2021/03/01/Hardening-Servidor.html
-· Práctica SSL en Apache
+- Práctica SSL en Apache
 https://psegarrac.github.io/Ciberseguridad-PePS/tema1/practicas/2020/11/08/P1-SSL.html

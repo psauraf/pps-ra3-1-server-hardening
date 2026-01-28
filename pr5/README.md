@@ -18,6 +18,8 @@ Implementar un servidor web Nginx aplicando medidas adicionales de hardening y m
 
     docker build -t pps/pr5 .
 
+---
+
 ## Run
 docker run -d -p 8084:80 --name pps-pr5 pps/pr5
 
@@ -55,17 +57,17 @@ El uso de HTTPS y HSTS ya ha sido implementado y validado en la Práctica 1 (Apa
 
 ## Referencias
 
-- Nginx Security Controls  
-  https://docs.nginx.com/nginx/admin-guide/security-controls/
+- Nginx Security Controls
+https://docs.nginx.com/nginx/admin-guide/security-controls/
 
-- OWASP Secure Headers Project  
-  https://owasp.org/www-project-secure-headers/
+- OWASP Secure Headers Project
+https://owasp.org/www-project-secure-headers/
 
-- OWASP Top 10 – Web Application Security Risks  
-  https://owasp.org/www-project-top-ten/
+- OWASP Top 10 – Web Application Security Risks
+https://owasp.org/www-project-top-ten/
 
-- Hardening del servidor web – Puesta en Producción Segura  
-  https://psegarrac.github.io/Ciberseguridad-PePS/tema3/seguridad/web/2021/03/01/Hardening-Servidor.html
+- Hardening del servidor web – Puesta en Producción Segura
+https://psegarrac.github.io/Ciberseguridad-PePS/tema3/seguridad/web/2021/03/01/Hardening-Servidor.html
 
-- Nginx Rate Limiting  
-  https://nginx.org/en/docs/http/ngx_http_limit_req_module.html
+- Nginx Rate Limiting
+https://nginx.org/en/docs/http/ngx_http_limit_req_module.html

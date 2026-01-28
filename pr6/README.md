@@ -59,12 +59,12 @@ Esto garantiza que todas las comunicaciones se realicen de forma cifrada.
 
 ---
 
-## Ejecución del contenedor
-
 ## Build
 Desde el directorio pr6:
 
         docker build -t pps/pr6 .
+
+---
 
 ## Run
 Ejecución exponiendo HTTP y HTTPS:

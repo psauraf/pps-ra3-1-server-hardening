@@ -36,22 +36,22 @@ y cuerpo de las peticiones, mitigando ataques de tipo Slow HTTP.
 
 ---
 
-## Despliegue
+## Build
 
-### Build
-
-    docker build -t pps/pr4 .
+        docker build -t pps/pr4 .
 
 ---
 
 ## Run
 
-    docker run -d -p 8083:80 --name pps-pr4 pps/pr4
+        docker run -d -p 8083:80 --name pps-pr4 pps/pr4
+
+---
 
 ## Validación
 1. Comprobación del servicio:
 
-    curl -i http://localhost:8083
+        curl -i http://localhost:8083
 
 Resultado esperado: 200 OK
 
@@ -59,13 +59,13 @@ Resultado esperado: 200 OK
 
 2. Verificación del módulo evasive:
     
-    apachectl -M | grep evasive
+        apachectl -M | grep evasive
 
 ![Comprobación modulo evasive activo](img/evasive_module.png)
 
 3. Simulación básica de múltiples peticiones:
 
-    for i in {1..50}; do curl -s http://localhost:8083 >/dev/null; done
+        for i in {1..50}; do curl -s http://localhost:8083 >/dev/null; done
 
 ![Simulación básica de flood (simple)](img/flood_sim.png)
 
@@ -79,6 +79,6 @@ externas como firewalls dedicados, balanceadores o CDNs.
 ---
 
 ## Referencias
-    · Apache mod_evasive
-    · OWASP – Denial of Service
-    · Puesta en Producción Segura – Server Hardening
+- Apache mod_evasive
+- OWASP – Denial of Service
+- Puesta en Producción Segura – Server Hardening
