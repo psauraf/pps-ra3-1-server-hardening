@@ -129,3 +129,9 @@ pps-ra3-1-server-hardening/
 - Cada práctica puede ejecutarse de forma independiente.
 - Los certificados utilizados son autofirmados, con fines educativos.
 - Las validaciones se han realizado mediante curl, navegador web y logs del servidor.
+
+---
+
+Trabajo realizado por **Pedro Saura Font**  
+Asignatura: **Puesta en Producción Segura**  
+Curso de Especialización en Ciberseguridad en Entornos de las Tecnologías de la Información
